@@ -1,0 +1,16 @@
+<% include blocks/header.ejs%>
+
+<div class="card text-white bg-info mb-3 mr-auto ml-auto mt-3" style="max-width: 70%;">
+    <div class="card-header">Отзывы и предложения</div>
+    <div class="card-body">
+        <h5 class="card-title">Оставьте свой отзыв или предложение</h5>
+        <p class="card-text">Укажите свои контактные данные и мы обязательно дадим Вам обратную связь.</p>
+        <form action="/contact" method="post">
+            <input type="text" name="text" class="form-control" id="message_id" placeholder="Введите текст...">
+            <button type="submit" class="btn btn-outline-warning mt-1">Отправить</button>
+        </form>
+    </div>
+</div>
+
+
+<% include blocks/footer.ejs%>

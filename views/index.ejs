@@ -1,0 +1,33 @@
+<% include blocks/header.ejs%>
+
+<div class="container">
+    <h2 class="text-center mt-1"><b>БЛОГ</b></h2><br>
+    <h6 class="text-center">Пример реализации сайта с помощью NodeJS и шаблонизатора EJS<br>Данные хранятся в файле JSON</h6><hr>
+    <form method="post" action="/add" class="col-11">
+        <div class="form-group">
+            <label for="user_name_id" class="form-control-label"><b>Ваш текст статьи:</b></label>
+            <input type="text" name="message" class="form-control" id="message_id" placeholder="Введите текст...">
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить запись</button>
+    </form>
+    <hr>
+    <% objData.forEach(function (t) { %>
+        <!--<div class="row m-0 p-0">-->
+            <!--<b class="col-9 mr-auto"><%= t.id %></b>-->
+            <!--<a href="/delete/<%= t.id %>" class="col-1">Удалить</a>-->
+            <!--<div class="col-12"><i><%= t.name  %></i></div>-->
+        <!--</div>-->
+        <div class="card bg-light mb-1 border-dark">
+            <div class="card-header p-2">
+                <%= t.id %>
+                <a href="/delete/<%= t.id %>" class="close" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+            <div class="card-body p-1">
+                <p class="card-text"><%= t.name  %></p>
+            </div>
+        </div>
+    <% }); %>
+</div>
+<% include blocks/footer.ejs%>
